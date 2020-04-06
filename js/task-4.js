@@ -2,18 +2,20 @@
 
 let counterValue = 0;
 
+function handleDecrement(e) {
+  counterValue -= 1;
+  document.querySelector("#value").textContent = counterValue;
+}
+
 document
   .querySelector('#counter button[data-action="decrement"]')
-  .addEventListener("click", e => {
-    counterValue -= 1;
+  .addEventListener("click", handleDecrement);
 
-    document.querySelector("#value").textContent = counterValue;
-  });
+function handleIncrement(e) {
+  counterValue += 1;
+  document.querySelector("#value").textContent = counterValue;
+}
 
 document
   .querySelector('#counter button[data-action="increment"]')
-  .addEventListener("click", e => {
-    counterValue += 1;
-
-    document.querySelector("#value").textContent = counterValue;
-  });
+  .addEventListener("click", handleIncrement);
